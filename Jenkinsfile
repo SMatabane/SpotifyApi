@@ -9,7 +9,7 @@ pipeline {
                 script {
                     
                     try {
-                        git branch: 'main', credentialsId: '9ad2d862-1e64-42d5-8d6d-92c018b724e8', url: 'https://github.com/SMatabane/Spotify_API_Testing'
+                        git branch: 'main', credentialsId: '9ad2d862-1e64-42d5-8d6d-92c018b724e8', url: 'https://github.com/SMatabane/SpotifyApi.git'
                     } catch (Exception e) {
                         error "Checkout failed: ${e.message}"
                     }
