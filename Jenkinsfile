@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    dir('SpotyFIAPI')
+                    dir('SpotifyApi')
                     try {
                         bat "${MAVEN_HOME}/bin/mvn clean compile -DskipTests"
                     } catch (Exception e) {
@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    dir('SpotyFIAPI')
+                    dir('SpotifyApi')
                     try {
                         bat "${MAVEN_HOME}/bin/mvn test -DsuiteXmlFile=testng.xml"
                     } catch (Exception e) {
@@ -43,7 +43,7 @@ pipeline {
         stage('Allure Report') {
             steps {
                 script {
-                    dir('SpotyFIAPI')
+                    dir('SpotifyApi')
                     try {
                         allure includeProperties: false, results: [[path: 'target/allure-results']]
                     } catch (Exception e) {
